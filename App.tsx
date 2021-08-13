@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import Hero from './components/Hero/Hero';
+import Body from './components/Body/Body';
+import Footer from './components/Footer/Footer';
+import './App.css';
 
 function App() {
 
-    const [ loaded, setLoaded ] = useState(false);
-
-    useEffect(() => {
-        setLoaded(true);
-    }, [])
-
-    
     return (
-        <div>
-            {loaded == false && <div>that one</div>}
-            {loaded == true && <div>this</div>}
+        <div className="single-page">
+            <Hero />
+            <Body />
+            <Footer />
         </div>
     )
 }
