@@ -2,11 +2,12 @@
   "name": "client",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "start": "webpack serve --hot"
+    "start": "webpack serve --hot",
+    "local": "light-server -s dist"
   },
   "author": "",
   "license": "ISC",
