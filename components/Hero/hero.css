@@ -19,10 +19,7 @@
   flex-direction: row;
   justify-content: space-between;
   background: #63c5da;
-  border-bottom: 1px solid #82eefd;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.25);
   box-shadow: 0 0 10px #82eefd;
   margin-bottom: 25vh;
-}
-
-.nav-scroll {
 }
