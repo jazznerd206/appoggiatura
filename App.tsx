@@ -12,6 +12,17 @@ function App() {
     
     console.log('isLoggedIn :>> ', isLoggedIn);
 
+    useEffect(() => {
+        let body = document.getElementsByTagName('body');
+        if (body[0].classList.contains('dark')) {
+            body[0].classList.remove('dark');
+            body[0].classList.add('light');
+        } else {
+            body[0].classList.remove('light');
+            body[0].classList.add('dark');
+        }
+    }, [theme])
+
     return (
         <AppContext.Provider value={{ theme, setTheme, isLoggedIn, setIsLoggedIn }}>
             <div className="single-page">

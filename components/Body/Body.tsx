@@ -19,7 +19,7 @@ function Body() {
             <div className="page body">
                 <h1>sup</h1>
                 <button onClick={() => setTheme(theme === 'Light' ? Theme.Dark : Theme.Light)}>
-                        switch to {theme === 'Light' ? 'dark' : 'light'} theme
+                        switch to {theme === 'Light' ? 'light' : 'dark'} theme
                     </button>
                 <div className="page body">
                     <button onClick={() => setIsLoggedIn(0)}>

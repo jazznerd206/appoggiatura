@@ -7,10 +7,18 @@ html {
 }
 
 body {
-  background-color: #000a14;
-  color: #0066cc;
   margin: 0;
   padding: 0;
+}
+
+body.light {
+  background-color: #0066cc;
+  color: #000a14;
+}
+
+body.dark {
+  background-color: #000a14;
+  color: #0066cc;
 }
 
 ul {
