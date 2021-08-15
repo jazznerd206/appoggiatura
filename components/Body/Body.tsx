@@ -1,18 +1,19 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { AppContext } from '../../context/app.context';
+import { Theme, useTheme } from '../../context/app.context';
 import '../../App.css';
+import './body.css';
 
 function Body() {
 
-    const ctx = useContext(AppContext);
-
-    useEffect(() => {
-        console.log('ctx from body :>> ', ctx);
-    }, [])
+    const { theme, setTheme } = useTheme();
+    console.log('theme :>> ', theme);
 
     return (
-        <div className="page">
-        </div>
+            <div className="page body">
+                <button onClick={() => setTheme(theme === 'Light' ? Theme.Dark : Theme.Light)}>
+                    switch to {theme === 'Light' ? 'dark' : 'light'} theme
+                </button>
+            </div>
     )
 }
 

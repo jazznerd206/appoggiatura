@@ -1,14 +1,14 @@
-import React, { useState, createContext } from "react";
- 
-// Create Context Object
-export const AppContext = createContext({
-    state: null,
-    dispatch: null,
-});
- 
-// Create a provider for components to consume and subscribe to changes
-export const AppContextProvider = (props: object) => {
-  const [token, setToken] = useState(0);
- 
-  return AppContextProvider;
-};
+import React, { useState, useContext, createContext } from "react";
+
+export enum Theme {
+  Dark = 'Dark',
+  Light = 'Light',
+}
+
+export type ThemeContextType = {
+  theme: Theme;
+  setTheme: (Theme: Theme) => void;
+}
+
+export const ThemeContext = createContext<ThemeContextType>({ theme: Theme.Dark, setTheme: theme => console.warn('no theme provider')});
+export const useTheme = () => useContext(ThemeContext);

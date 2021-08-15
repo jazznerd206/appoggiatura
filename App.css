@@ -9,6 +9,8 @@ html {
 body {
   background-color: #000a14;
   color: #0066cc;
+  margin: 0;
+  padding: 0;
 }
 
 ul {
@@ -37,6 +39,8 @@ ul {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .page {
@@ -47,4 +51,6 @@ ul {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
