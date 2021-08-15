@@ -1,0 +1,68 @@
+.drawer {
+  border: 1px white solid;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bar {
+  z-index: 999;
+  width: auto;
+  display: block;
+  position: absolute;
+  flex: 0;
+  bottom: 0;
+  top: 95%;
+  transform: translate(0%, -100%);
+  width: 100%;
+  height: 2em;
+  transition: all 1s ease;
+}
+
+.bar.expand {
+  flex: 1 1;
+  bottom: 100%;
+  top: 0;
+}
+
+.content {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  height: 0%;
+  flex: 0;
+  flex-grow: 0;
+  transition: all 1s ease;
+}
+
+.content.expand {
+  height: 100%;
+  flex: 1 1;
+  flex-grow: 1;
+}
+
+.tab {
+  width: 25%;
+  flex-grow: 1;
+  border: 1px solid;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.active {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

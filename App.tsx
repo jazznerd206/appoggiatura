@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext, useReducer } from 'react';
 import { AppContext, Theme, Authenticated } from './context/app.context';
 import Hero from './components/Hero/Hero';
+import TabbedDrawer from './components/TabbedDrawer/TabbedDrawer';
 import Body from './components/Body/Body';
 import Footer from './components/Footer/Footer';
 import './App.css';
@@ -27,6 +28,7 @@ function App() {
         <AppContext.Provider value={{ theme, setTheme, isLoggedIn, setIsLoggedIn }}>
             <div className="single-page">
                 <Hero />
+                <TabbedDrawer />
                 <Body />
                 <Footer />
             </div>
