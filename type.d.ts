@@ -1,4 +1,4 @@
 interface CTX {
-    loggedIn: Boolean,
-    loading: Boolean,
-  }
+  loggedIn: Boolean,
+  loading: Boolean,
+}
