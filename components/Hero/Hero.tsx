@@ -7,15 +7,15 @@ function Hero() {
 
     const curr = useScroll();
 
-    useEffect(() => {
-        const hero = document.getElementById('hero');
-        const menu = document.getElementById('menu');
-        if (curr.scrollY > 50) {
-            hero.classList.add('hero-scroll');
-        } else {
-            hero.classList.remove('hero-scroll');
-        }
-    }, [curr])
+    // useEffect(() => {
+    //     const hero = document.getElementById('hero');
+    //     const menu = document.getElementById('menu');
+    //     if (curr.scrollY > 50) {
+    //         hero.classList.add('hero-scroll');
+    //     } else {
+    //         hero.classList.remove('hero-scroll');
+    //     }
+    // }, [curr])
 
     return (
         <div className="page hero" id="hero">

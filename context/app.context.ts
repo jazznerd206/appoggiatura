@@ -5,10 +5,23 @@ export enum Theme {
   Light = 'Light',
 }
 
-export type ThemeContextType = {
-  theme: Theme;
-  setTheme: (Theme: Theme) => void;
+export enum Authenticated {
+  Admin = 2,
+  In = 1,
+  Out = 0,
 }
 
-export const ThemeContext = createContext<ThemeContextType>({ theme: Theme.Dark, setTheme: theme => console.warn('no theme provider')});
-export const useTheme = () => useContext(ThemeContext);
+export interface AppContextType {
+  theme: Theme;
+  setTheme: (Theme: Theme) => void;
+  isLoggedIn: Authenticated;
+  setIsLoggedIn: (Authenticate: Authenticated) => void;
+}
+
+export const AppContext = createContext<AppContextType>({ 
+  theme: Theme.Dark, 
+  setTheme: (theme: Theme) => console.warn('no theme provider'),
+  isLoggedIn: Authenticated.Out,
+  setIsLoggedIn: (n: number) => console.log(n)
+});
+export const getContext = () => useContext(AppContext);
