@@ -56,6 +56,11 @@ li > span {
   align-items: center;
   margin: 0;
   padding: 0;
+  background-image: url("https://i.pinimg.com/originals/4f/39/10/4f39103da156fb7e479abd6355932e88.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .page {
