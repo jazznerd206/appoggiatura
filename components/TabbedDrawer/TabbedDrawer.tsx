@@ -28,9 +28,11 @@ function TabbedDrawer() {
     const reveal = () => {
         const drawer = document.getElementById('drawer');
         drawer.style.transform = 'translate(-50%, -60%)';
+        drawer.classList.remove('flash');
         const icon = document.getElementById('icon');
-        icon.style.top = '5px';
+        icon.style.top = '0px';
         icon.style.bottom = 'unset';
+        icon.style.color = 'red';
         const bar = document.getElementById('bar');
         const content = document.getElementById('content');
         bar.style.display = 'flex';
@@ -40,12 +42,19 @@ function TabbedDrawer() {
     }
 
     const hide = () => {
+        const icon = document.getElementById('icon');
+        icon.style.bottom = '0px';
+        icon.style.top = 'unset';
+        icon.style.color = 'unset'
         const drawer = document.getElementById('drawer');
-        drawer.style.transform = 'translate(-50%, -140%)';
+        drawer.classList.add('flash');
+        drawer.style.transform = 'translate(-50%, -155%)';
         const bar = document.getElementById('bar');
         const content = document.getElementById('content');
         bar.style.display = 'none';
         content.style.display = 'none';
+        setDrawerOpen(false);
+        return;
     }
 
     const expand = event => {
@@ -53,6 +62,8 @@ function TabbedDrawer() {
         console.log('e :>> ', event);
         const bar = document.getElementById('bar');
         const content = document.getElementById('content');
+        const icon = document.getElementById('icon');
+        icon.classList.toggle('rotate')
         if (bar.classList.contains('expand')) {
             bar.classList.remove('expand');
             content.classList.remove('expand');
@@ -82,17 +93,18 @@ function TabbedDrawer() {
     }, [])
 
     return (
-        <div className="page drawer" id="drawer">
+        <div className="page drawer flash" id="drawer">
             <div className="panel-content">
                 <i 
-                    className="far fa-envelope-open fa-5x" 
+                    className="far fa-compass fa-2x icon" 
                     id="icon" 
                     onClick={drawerOpen === true ? () => hide() : () => reveal()}
                 ></i>
             </div>
             <div className="bar" id="bar" onClick={(e) => expand(e)}>
-                {!open && <i className="fas fa-chevron-up fa-5x"></i>}
-                {open && <i className="fas fa-chevron-down fa-5x"></i>}
+                {!open && <i className="fas fa-chevron-up fa-5x icon" id="open"></i>}
+                {open && <i className="fas fa-chevron-down fa-5x icon" id="closed"></i>}
+                
             </div>
             <div className="content" id="content">
                 <ul className="tabs" id="tabs">
