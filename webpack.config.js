@@ -5,11 +5,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.tsx',
   devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-     hot: true,
-  },
   mode: 'development',
+  devServer: {
+    host: '0.0.0.0',
+    port: 3000,
+    contentBase: './dist',
+    hot: true,
+  },
   module: {
     rules: [
       {

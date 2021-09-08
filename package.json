@@ -8,6 +8,10 @@
     "build": "webpack",
     "start": "webpack serve --hot",
     "local": "light-server -s dist",
+    "docker:buildit": "docker build -t appogiatura .",
+    "docker:sendit": "docker run -d -p 3000:3000 appogiatura",
+    "docker:killit": "`docker container kill $(docker ps -q)",
+    "docker:prune": "docker system prune -a",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
